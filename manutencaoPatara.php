@@ -70,10 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         Manuntenções agendadas
                         <small>Pesquise dentre o intervalo de data para ver os componentes que necessitam de manuntenção.</small>
                     </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                        <li class="active">Here</li>
-                    </ol>
+                    
                 </section>
                 <br>
 
@@ -143,22 +140,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 
                                                 <tr>
                                                     <td>00000</td>
-                                                    <td>Bomba d'�gua</td>
+                                                    <td>Bomba d'água</td>
                                                     <td>Piscina 2</td>
                                                     <td id="date1">13-10-2018</td>
-                                                    <td id="lbl1"><span class="label label-warning">Requer manunten��o</span></td>
-                                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                                    <td id="lbl1"><span class="label label-warning">Requer manuntenção</span></td>
+                                                    <td>A bomba foi trocada.</td>
                                                     <td>
                                                         <button id="btn1" type="button" class="btn btn-success">OK!</button>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>00000</td>
-                                                    <td>M�quina de caf�</td>
-                                                    <td>Escrit�rio tal</td>
+                                                    <td>00001</td>
+                                                    <td>Máquina de café</td>
+                                                    <td>Escritório tal</td>
                                                     <td id="date2">06-06-2018</td>
                                                     <td id="lbl2"><span class="label label-danger">Atrasado!</span></td>
-                                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                                    <td>Jarra trocada.</td>
                                                     <td>
                                                         <button id="btn2" type="button" class="btn btn-success">OK!</button>
                                                     </td>

@@ -4,9 +4,9 @@
 <!-- Logo -->
 <a href="index.html" class="logo">
   <!-- mini logo for sidebar mini 50x50 pixels -->
-  <span class="logo-mini"><b>N</b>AA</span>
+  
   <!-- logo for regular state and mobile devices -->
-  <span class="logo-lg"><b>Name</b>AA</span>]
+  <span class="logo-lg"><b>AutoG</b>Hotelaria</span>]
 </a>
 
 <!-- Header Navbar -->
@@ -64,19 +64,12 @@
   <!-- Sidebar Menu -->
   <ul class="sidebar-menu" data-widget="tree">
     <!-- Optionally, you can add icons to the links -->
-    <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Solicitaçõese</span></a></li>
-    <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-    <li class="treeview">
-      <a href="#"><i class="fab fa-wpforms"></i> <span>Another Link</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-      </a>
-      <ul class="treeview-menu">
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-      </ul>
-    </li>
+    <li class="active"><a href="indexPatara.php"><i class="fa fa-link"></i> <span>Solicitações</span></a></li>
+   
+    <li><a href="manutencaoPatara.php"><i class="fa fa-link"></i> <span>Manutenções Agendadas</span></a></li>
+    <li><a href="sol_func.php"><i class="fa fa-link"></i> <span>Minhas Solicitações</span></a></li>
+    
+     
   </ul>
   <!-- /.sidebar-menu -->
 </section>

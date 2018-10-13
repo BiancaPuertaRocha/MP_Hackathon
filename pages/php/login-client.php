@@ -41,5 +41,5 @@
 
         @header("Location: http://localhost/MP_Hackathon/pages/login-user.php");
     }
-    $_SESSION['funcioanrio']=0;
+    $_SESSION['funcionario']=0;
 ?>
