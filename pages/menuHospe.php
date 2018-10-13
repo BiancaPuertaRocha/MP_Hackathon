@@ -65,8 +65,7 @@
   <ul class="sidebar-menu" data-widget="tree">
     <!-- Optionally, you can add icons to the links -->
     <li class="active"><a href="../indexPatara.php"><i class="fa fa-link"></i> <span>Solicitações</span></a></li>
-    <li><a href="../manutencaoPatara.php"><i class="fa fa-link"></i> <span>Manutenções Agendadas</span></a></li>
-    <li><a href="../manutencaoPatara.php"><i class="fa fa-link"></i> <span>Manutenções Agendadas</span></a></li>
+    
     <li class="treeview">
       <a href="#"><i class="fab fa-wpforms"></i> <span>Another Link</span>
         <span class="pull-right-container">

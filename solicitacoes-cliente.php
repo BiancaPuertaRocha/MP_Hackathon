@@ -12,7 +12,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>Auto G | Solicitações</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -113,28 +113,29 @@ desired effect
             </ul>
             <div class="tab-content">
               <div class="tab-pane" id="tab_1-1">
-                
-              <div class="input-group">
-                <input type="hidden" class="form-control">
-              </div>
 
-              <div class="form-group">
-                <label for="exampleInputEmail1">Localidade</label>
-                <input type="text" class="form-control" placeholder="Localidade">
-              </div>
-              
-              <div class="form-group">
-                <label for="exampleInputEmail1">Tipo de Funcionário</label>
-                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                  <option selected="selected">Eletricista</option>
-                  <option>Hidraulico</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                  <label>Descrição</label>
-                  <textarea class="form-control" rows="3" placeholder="Descreve o problema que está ocorrendo"></textarea>
+              <form action="http://localhost/MP_Hackathon/pages/php/Cliente/solicitacao-nova-cliente.php" method="post">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Localidade</label>
+                  <input type="text" class="form-control" placeholder="Localidade" name="localidade">
                 </div>
+                
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tipo de Funcionário</label>
+                  <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="tipo">
+                    <option selected="selected" value="1">Eletricista</option>
+                    <option value="2">Hidraulico</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea class="form-control" rows="5 placeholder="Descreve o problema que está ocorrendo" name="descricao"></textarea>
+                  </div>
+
+                  <!-- BOTAO SUBMIT -->
+                  <button type="submit" class="btn btn-block btn-success btn-flat">Adicionar</button>
+                </form>
 
               </div>
               <!-- /.tab-pane -->

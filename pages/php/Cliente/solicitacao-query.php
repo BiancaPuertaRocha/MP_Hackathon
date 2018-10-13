@@ -10,6 +10,8 @@
             $imgName = "default-50x50.gif";
             if($row['tipo'] == 1)
                 $nomeTipo = "Elétrico";
+            else if($row['tipo'] == 2)
+            $nomeTipo = "Hidraulico";
 
             if($row['situacao'] == 0)
                 $imgName = "clock-icon.png";
