@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <head>  
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Solicitações</title>
+        <title>SolicitaÃ§Ãµes</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -66,7 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Minhas solicitações
+                        Minhas solicitaï¿½ï¿½es
                         <small>Em caso de algum defeito em aparelho ou qualquer outro, notifique a equipe!</small>
                     </h1>
                     <ol class="breadcrumb">
@@ -82,9 +82,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="box box-danger">
                             <div class="nav-tabs-custom">
                                 <ul class="nav nav-tabs pull-right">
-                                    <li class=""><a href="#tab_1-1" data-toggle="tab" aria-expanded="false">Nova Solicitação</a></li>
-                                    <li class="active"><a href="#tab_2-2" data-toggle="tab" aria-expanded="true">Minhas Solicitações</a></li>
-                                    <li class="pull-left header"><i class="fa fa-list-alt"></i> Solicitações</li>
+                                    <li class=""><a href="#tab_1-1" data-toggle="tab" aria-expanded="false">Nova Solicitaï¿½ï¿½o</a></li>
+                                    <li class="active"><a href="#tab_2-2" data-toggle="tab" aria-expanded="true">Minhas Solicitaï¿½ï¿½es</a></li>
+                                    <li class="pull-left header"><i class="fa fa-list-alt"></i> Solicitaï¿½ï¿½es</li>
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane" id="tab_1-1">
@@ -99,16 +99,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Tipo de Funcionário</label>
+                                            <label for="exampleInputEmail1">Tipo de Funcionï¿½rio</label>
                                             <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                                 <option selected="selected">Eletricista</option>
-                                                <option>Hidráulico</option>
+                                                <option>Hidrï¿½ulico</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Descrição</label>
-                                            <textarea class="form-control" rows="3" placeholder="Descreva o problema que está ocorrendo"></textarea>
+                                            <label>Descriï¿½ï¿½o</label>
+                                            <textarea class="form-control" rows="3" placeholder="Descreva o problema que estï¿½ ocorrendo"></textarea>
                                         </div>
 
                                     </div>
@@ -121,11 +121,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <img src="dist/img/default-50x50.gif" alt="Corrigido">
                                                 </div>
                                                 <div class="product-info">
-                                                    <a href="javascript:void(0)" class="product-title">Problema Elétrico
+                                                    <a href="javascript:void(0)" class="product-title">Problema Elï¿½trico
                                                         <span class="label label-warning pull-right">00:00:00</span>
                                                         <span class="label label-success pull-right">00:00:00</span></a>
                                                     <span class="product-description">
-                                                        Descrição da doideira hiper mega superior hidra topper top.
+                                                        Descriï¿½ï¿½o da doideira hiper mega superior hidra topper top.
                                                     </span>
                                                 </div>
                                             </li>
@@ -135,11 +135,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <img src="dist/img/default-50x50.gif" alt="Product Image">
                                                 </div>
                                                 <div class="product-info">
-                                                    <a href="javascript:void(0)" class="product-title">Problema Hidráulico
+                                                    <a href="javascript:void(0)" class="product-title">Problema Hidrï¿½ulico
                                                         <span class="label label-warning pull-right">00:00:00</span>
                                                         <span class="label label-success pull-right">00:00:00</span></a>
                                                     <span class="product-description">
-                                                        Descrição da doideira hiper mega superior hidra topper top.
+                                                        Descriï¿½ï¿½o da doideira hiper mega superior hidra topper top.
                                                     </span>
                                                 </div>
                                             </li>
