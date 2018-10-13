@@ -109,6 +109,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="form-group">
                                             <label>Descrição</label>
                                             <textarea class="form-control" rows="3" placeholder="Descreva o problema que está ocorrendo"></textarea>
+                                            
+                                            <!--Botao-->
+                                            <button type="submit" class="btn btn-block btn-success btn-flat">Adicionar</button>
                                         </div>
 
                                     </div>

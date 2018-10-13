@@ -36,13 +36,13 @@
             <div class="login-box-body">
                 <p class="login-box-msg">Preencha com seus credenciais</p>
 
-                <form action="index.html" method="post">
+                <form action="logaUserHospede.php" method="post">
                     <div class="form-group has-feedback">
-                        <input type="text" class="form-control" placeholder="Usuário">
+                        <input name="login" type="text" class="form-control" placeholder="Usuário">
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="password" class="form-control" placeholder="Senha">
+                        <input name="senha" type="password" class="form-control" placeholder="Senha">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="row">

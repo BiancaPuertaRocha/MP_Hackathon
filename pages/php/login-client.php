@@ -37,7 +37,9 @@
         $_SESSION['logado'] = "false";
         $_SESSION['mensagem'] = "Código incorreto!";
         echo 'erro login';
+        
 
         @header("Location: http://localhost/MP_Hackathon/pages/login-user.php");
     }
+    $_SESSION['funcioanrio']=0;
 ?>

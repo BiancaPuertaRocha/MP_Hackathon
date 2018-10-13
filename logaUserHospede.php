@@ -1,8 +1,11 @@
 <?php
+session_start();
+$senha=$_POST['senha'];
+$login = $_POST['login'];
+$busca = "select * from funcionario where senha= $senha and login=$login ;";
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+$resultado = mysqli_query($conexao, $busca);
+$produto = mysqli_fetch_assoc($resultado);
+$_SESSION['funcionario']= $login;
+$_SESSION['nome']= $produto['nome'];
+  @header("Location: http://localhost/MP_Hackathon/indexPatara.php");
