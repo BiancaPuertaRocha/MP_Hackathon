@@ -131,7 +131,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <td>'.$produto['validade'].'</td>
                                                    
                                                     <td id="lbl0"><span class="label label-success">Em funcionamento</span></td>
-                                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                                   
                                                     <td>
                                                         <button id="btn0" type="button" class="btn btn-success">OK!</button>
                                                     </td>
