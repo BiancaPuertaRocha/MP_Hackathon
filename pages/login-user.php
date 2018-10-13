@@ -34,11 +34,11 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Nome </b>AA</a>
+    <a href="../../index2.html"><b>AutoG</b>Hotelaria </a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Hospedeiro</p>
+    <p class="login-box-msg">Hospede</p>
 
     <form action="http://localhost/MP_Hackathon/pages/php/login-client.php" method="post">
       <div class="form-group has-feedback">

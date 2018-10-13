@@ -31,7 +31,7 @@
             $_SESSION['codigoGerado'] =$row['codigoGerado'];
             $_SESSION['logado'] = "true";
             echo 'logado';
-            @header("Location: http://localhost/MP_Hackathon/index.php");
+            @header("Location: http://localhost/MP_Hackathon/solicitacoes-cliente.php");
         }
     } else {
         $_SESSION['logado'] = "false";
