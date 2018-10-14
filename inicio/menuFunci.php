@@ -43,7 +43,7 @@
       <img src="../dist/img/user-160x160.png" class="img-circle" alt="User Image">
     </div>
     <div class="pull-left info">
-      <p><?php echo $_SESSION['funcionario']; ?></p>
+      <p><?php echo $_SESSION['login']; ?></p>
       <!-- Status -->
       <a href="#"><i class="fas fa-user-md text-success"></i> <?php echo $_SESSION['nome']; ?></a>
     </div>

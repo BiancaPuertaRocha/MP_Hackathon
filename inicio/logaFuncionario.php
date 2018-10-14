@@ -1,12 +1,49 @@
 <?php
-session_start();
-include 'conecta.php';
-$senha=$_POST['senha'];
-$login = $_POST['login'];
-$busca = "select * from funcionario where senha= '$senha' and login='$login' ;";
-echo $busca;
-$resultado = mysqli_query($conexao, $busca);
-$produto = mysqli_fetch_assoc($resultado);
-$_SESSION['funcionario']= $login;
-$_SESSION['nome']= $produto['nome'];
-  @header("Location: http://localhost/MP_Hackathon/solicitacoes/pendentesFuncionario.php");
+include_once("conecta.php");
+@session_start();
+ 
+$login = filter_input(INPUT_POST, 'login');
+$login = str_replace(" ", "", $login);
+$login = str_replace("-", "", $login);
+$loginValidada = (isset($login)) ? $login : '' ;
+ 
+$senha = filter_input(INPUT_POST, 'senha');
+$senha = str_replace(" ", "", $senha);
+$senha = str_replace("-", "", $senha);
+$senhaValidada = (isset($senha)) ? $senha : '' ;
+ 
+// Verifica se a requisição é o dominío nosso
+if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] != "http://localhost/MP_Hackathon/inicio/login.php"):
+    echo 'url error';
+    @header("Location: http://localhost/MP_Hackathon/inicio/login.php");
+    exit();
+endif;
+ 
+if (empty($loginValidada) || empty($senhaValidada)):
+    echo 'login ou senha está vazio';
+    @header("Location: http://localhost/MP_Hackathon/inicio/login.php");
+    exit();
+endif;
+ 
+$sql = "SELECT * from funcionario where senha= '$senha' and login='$login';";
+$conexao->set_charset("utf8");
+$result = $conexao->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $_SESSION['codigo']   = $row['codigo'];
+        $_SESSION['nome']     = $row['nome'];
+        $_SESSION['login']    = $row['login'];
+        $_SESSION['tipoServ'] = $row['tipoServ'];
+        $_SESSION['logado']   = "true";
+        echo 'logado';
+        @header("Location: http://localhost/MP_Hackathon/solicitacoes/pendentesFuncionario.php");
+    }
+} else {
+    $_SESSION['logado'] = "false";
+    $_SESSION['mensagem'] = "Usuário ou senha incorretos!";
+    echo 'erro login';
+   
+ 
+    @header("Location: http://localhost/MP_Hackathon/inicio/login.php");
+}
+$_SESSION['funcionario']=1;

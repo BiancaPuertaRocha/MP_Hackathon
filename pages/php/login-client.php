@@ -20,7 +20,7 @@
         exit();
     endif;
 
-    $sql = "SELECT * from checkin where codigoGerado = $codigoCliente LIMIT 1;";
+    $sql = "SELECT * from checkin where codigoGerado = '$codigoCliente';";
     $conn->set_charset("utf8");
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
@@ -41,5 +41,5 @@
 
         @header("Location: http://localhost/MP_Hackathon/inicio/login-user.php");
     }
-    $_SESSION['funcionario']=1;
+    $_SESSION['funcionario']=0;
 ?>
