@@ -68,7 +68,7 @@
 
     <li><a href="../manutencao/manutencoesAgendadas.php"><i class="fa fa-link"></i> <span>Manutenções Agendadas</span></a></li>
     <li><a href="../solicitacoes/solicitacaoFuncionario.php"><i class="fa fa-link"></i> <span>Minhas Solicitações</span></a></li>
-    <li><a href="../manutencao/manutencao.php.php"><i class="fa fa-link"></i> <span>Nova Manutenção</span></a></li>
+    <li><a href="../manutencao/manutencao.php"><i class="fa fa-link"></i> <span>Nova Manutenção</span></a></li>
     
      
   </ul>

@@ -1,3 +1,7 @@
+<?php
+  @session_start();
+  include_once("../pages/php/valida-login-cliente.php");
+?>
 
 <!DOCTYPE html>
 <!--
@@ -72,7 +76,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <small>Quando aparecer uma solicitação para o seu cargo, você será notificado.</small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Funcionários</a></li>
                         <li class="active">Here</li>
                     </ol>
                 </section>
@@ -86,183 +90,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <i class="fa fa-warning"></i>
                             </div>
                             <!-- /.box-header -->
-                            <div class="box-body"><script>
-                                function exibeDataHora() {
-
-                                    /*
-                                     *
-                                     * Funcao para exibicao de data e hora
-                                     * Angelito M. Goulart
-                                     * <angelito@bsd.com.br>
-                                     * 06/04/2011
-                                     *
-                                     * Uso: basta chama-la ao carregar a pagina
-                                     * e passar a div onde sera exibida a data 
-                                     * e hora como parametro.
-                                     *
-                                     */
-
-                                    //cria um objeto do tipo date
-                                    var data = new Date();
-
-                                    // obtem o dia, mes e ano
-                                    dia = data.getDate();
-                                    mes = data.getMonth() + 1;
-                                    ano = data.getFullYear();
-
-                                    //obtem as horas, minutos e segundos
-                                    horas = data.getHours();
-                                    minutos = data.getMinutes();
-                                    segundos = data.getSeconds();
-
-                                    //converte as horas, minutos e segundos para string
-                                    str_horas = new String(horas);
-                                    str_minutos = new String(minutos);
-                                    str_segundos = new String(segundos);
-
-                                    //se tiver menos que 2 digitos, acrescenta o 0
-                                    if (str_horas.length < 2)
-                                        str_horas = 0 + str_horas;
-                                    if (str_minutos.length < 2)
-                                        str_minutos = 0 + str_minutos;
-                                    if (str_segundos.length < 2)
-                                        str_segundos = 0 + str_segundos;
-
-                                    //converte o dia e o mes para string
-                                    str_dia = new String(dia);
-                                    str_mes = new String(mes);
-
-                                    //se tiver menos que 2 digitos, acrescenta o 0
-                                    if (str_dia.length < 2)
-                                        str_dia = 0 + str_dia;
-                                    if (str_mes.length < 2)
-                                        str_mes = 0 + str_mes;
-
-                                    //cria a string que sera exibida na div
-                                    data = ano + '-' + str_mes + '-' + str_dia;
-
-                                    //exibe a string na div
-                                    document.getElementById('dataReal').value = data;
-
-                                    //executa a funcao com intervalo de 1 segundo
-
-
-                                }
-
-                                </script>
+                            <div class="box-body">
                                 <?php
-                                $busca = "select * from solicitacao where situacao = 0 or situacao = 1 ;";
-
-                                $resultado = mysqli_query($conexao, $busca);
-                                $produto = mysqli_fetch_assoc($resultado);
-                                while ($produto) {
-                                    if ($produto['funcionario'] != null) {
-                                        $busca2 = "select * from funcionario where codigo=" . $produto['funcionario'] . " ;";
-                                        $resultado2 = mysqli_query($conexao, $busca2);
-                                        $produto2 = mysqli_fetch_assoc($resultado2);
-                                        $solicitante = $produto2['login'];
-                                    } else {
-                                        $busca2 = "select * from checkin where codigo=" . $produto['hospede'] . " ;";
-
-                                        $resultado2 = mysqli_query($conexao, $busca2);
-                                        $produto2 = mysqli_fetch_assoc($resultado2);
-                                        $solicitante = $produto2['codigoGerado'];
-                                    }
-
-
-                                    if ($produto['situacao'] == 0) {
-                                        echo '<form method="POST" action="../manutencao/insereManutencaoSolicitacao.php">
-                                                        <input type="hidden" id="solicitacao" name="solicitacao" value=' . $produto['codigo'] . '>
-                                                           
-                                                            <input type="hidden" id="dataReal" name="dataReal" >
-                                    <div id="caixa" class="alert alert-danger alert-dismissible">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
-                                        <h4>Localidade</h4>
-                                        
-                                        <div class="container-fluid">
-                                            <div class="row" style="display: flex">
-                                                <div class="col-xs-7 col-sm-8 col-md-8 col-lg-8">
-                                                    <p style="font-size: 20px">' . $produto['localidade'] . '</p>
-                                                </div>
-                                                <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4" style="text-align: center">
-                                                    <div class="col-md-auto">
-                                                        <h3 class="tempoInicio"style="margin-top: 0"> Recebido: ' . $produto['horariosol'] . '</h3>
-                                                    </div>
-                                                    <div class="col-md-auto">
-                                                        <h3 class="tempoAtual"></h3>
-                                                        <input type="hidden" id="horarioresp" name="horarioresp" >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <br>
-                                            <div class="row" style="text-align: center">
-                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                    <p style="font-size: 30px">Codigo: ' . $solicitante . '</p>
-                                                </div>
-                                                
-                                                <div class="col-xs-6 ccol-sm-6 col-md-3 col-lg-3">
-                                                <form method="post" action="indexPatara.php">
-                                                   
-                                                    <input type="hidden" id="solicitacao" name="solicitacao" value=' . $produto['codigo'] . '>
-                                                    </form>
-                                                </div>';
-                                        echo'
-                                                <div class="col-xs-6 ccol-sm-6 col-md-3 col-lg-3">
-                                                   <button type="submit" id="btnCaminho" class="btn btn-warning">A caminho!</button>
-                                                </div>';
-                                    } else {
-                                        echo '<form method="POST" action="../manutencao/manutencaoSolicitacao.php">
-                                                        <input type="hidden" id="solicitacao" name="solicitacao" value=' . $produto['codigo'] . '>
-                                                           
-                                                            <input type="hidden" id="dataReal" name="dataReal" >
-                                    <div id="caixa" class="alert alert-warning alert-dismissible">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
-                                        <h4>Localidade</h4>
-                                        
-                                        <div class="container-fluid">
-                                            <div class="row" style="display: flex">
-                                                <div class="col-xs-7 col-sm-8 col-md-8 col-lg-8">
-                                                    <p style="font-size: 20px">' . $produto['localidade'] . '</p>
-                                                </div>
-                                                <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4" style="text-align: center">
-                                                    <div class="col-md-auto">
-                                                        <h3 id="tempoInicio"style="margin-top: 0"> Recebido: ' . $produto['horariosol'] . '</h3>
-                                                    </div>
-                                                    <div class="col-md-auto">
-                                                        <h3 id="tempoAtual"></h3>
-                                                        <input type="hidden" id="horarioresp" name="horarioresp" >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <br>
-                                            <div class="row" style="text-align: center">
-                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                    <p style="font-size: 30px">Codigo: ' . $solicitante . '</p>
-                                                </div>
-                                                
-                                                <div class="col-xs-6 ccol-sm-6 col-md-3 col-lg-3">
-                                                <form method="post" action="indexPatara.php">
-                                                   
-                                                    <input type="hidden" id="solicitacao" name="solicitacao" value=' . $produto['codigo'] . '>
-                                                    </form>
-                                                </div>';
-                                        echo'
-                                                <div class="col-xs-6 ccol-sm-6 col-md-3 col-lg-3">
-                                                    <button type="submit" id="btnConclusao" class="btn btn-success disabled">Concluido!</button>
-                                                </div>';
-                                    }
-                                    echo '
-                                            </div>
-                                            <br>
-
-
-                                        </div>
-
-                                    </div>
-                                    
-                                </form>';
-                                    $produto = mysqli_fetch_assoc($resultado);
-                                }
+                                    include_once('../inicio/conecta.php');
+                                    include_once('../pages/php/Funcionario/solicitacao-query.php');
                                 ?>
 
                             </div>
@@ -298,6 +129,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="../dist/js/adminlte.min.js"></script>
         <!-- JS pra essa pagina -->
         <script src="../js/funcionario.js" type="text/javascript"></script>
+        <!-- Data -->
+        <script src="../dist/js/data_funcionario.js" type="text/javascript"></script>
 
         <!-- Optionally, you can add Slimscroll and FastClick plugins.
              Both of these plugins are recommended to enhance the

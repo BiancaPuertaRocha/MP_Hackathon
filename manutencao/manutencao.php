@@ -1,3 +1,7 @@
+<?php
+    @session_start();
+    include_once("../pages/php/valida-login-cliente.php");
+?>
 <!DOCTYPE html>
 <html>
     <head>

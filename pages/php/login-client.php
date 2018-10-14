@@ -2,9 +2,7 @@
     @include_once("connectDB.php");
     @session_start();
 
-    $codCli = filter_input(INPUT_POST, 'codigoCliente');
-    $codCli = str_replace(" ", "", $codCli);
-    $codCli = str_replace("-", "", $codCli);
+    $codCli = mysqli_real_escape_string($conn, $_POST['codigoCliente']);
     $codigoCliente = (isset($codCli)) ? $codCli : '' ;
     
     // Verifica se a requisição é o dominío nosso

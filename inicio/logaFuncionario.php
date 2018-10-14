@@ -2,14 +2,10 @@
 include_once("conecta.php");
 @session_start();
  
-$login = filter_input(INPUT_POST, 'login');
-$login = str_replace(" ", "", $login);
-$login = str_replace("-", "", $login);
+$login = mysqli_real_escape_string($conexao, $_POST['login']);
 $loginValidada = (isset($login)) ? $login : '' ;
  
-$senha = filter_input(INPUT_POST, 'senha');
-$senha = str_replace(" ", "", $senha);
-$senha = str_replace("-", "", $senha);
+$senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 $senhaValidada = (isset($senha)) ? $senha : '' ;
  
 // Verifica se a requisição é o dominío nosso

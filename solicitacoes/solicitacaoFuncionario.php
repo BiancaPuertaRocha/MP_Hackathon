@@ -70,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <small>Em caso de algum defeito em aparelho ou qualquer outro, notifique a equipe!</small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Funcionário</a></li>
                         <li class="active">Here</li>
                     </ol>
                 </section>
@@ -88,66 +88,44 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane" id="tab_1-1">
+                                        <form action="http://localhost/MP_Hackathon/pages/php/Funcionario/solicitacao-nova-func.php" method="post">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Localidade</label>
+                                                <input name="localidade" type="text" class="form-control" placeholder="Localidade">
+                                            </div>
 
-                                        <div class="input-group">
-                                            <input type="hidden" class="form-control">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Localidade</label>
-                                            <input type="text" class="form-control" placeholder="Localidade">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Tipo de Funcionário</label>
-                                            <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                                <option selected="selected">Eletricista</option>
-                                                <option>Hidr�ulico</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Descrição</label>
-                                            <textarea class="form-control" rows="3" placeholder="Descreva o problema que estão ocorrendo"></textarea>
+                                            <div class="form-group">
+                                                <label for="">Tipo de Funcionário</label>
+                                                <select name="tipo" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                    <option value="1" selected="selected">Eletricista</option>
+                                                    <option value="2">Hidráulico</option>
+                                                </select>
+                                            </div>
                                             
+                                            <div class="form-group">
+                                                <label>Descrição</label>
+                                                <textarea name="descricao" class="form-control" rows="3" placeholder="Descreva o problema que estão ocorrendo"></textarea>          
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input name="aCaminho" type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                    <label class="form-check-label" for="exampleCheck1">Estou a caminho!</label>
+                                                 </div>
+                                            </div>
                                             <!--Botao-->
                                             <button type="submit" class="btn btn-block btn-success btn-flat">Adicionar</button>
-                                        </div>
+                                        </form>
 
                                     </div>
                                     <!-- /.tab-pane -->
                                     <div class="tab-pane active" id="tab_2-2">
 
                                         <ul class="products-list product-list-in-box">
-                                            <li class="item">
-                                                <div class="product-img">
-                                                   
-                                                    <img src="../dist/img/default-50x50.gif" alt="Corrigido">
-                                                </div>
-                                                <div class="product-info">
-                                                    <a href="javascript:void(0)" class="product-title">Problema Elétrico
-                                                        <span class="label label-warning pull-right">00:00:00</span>
-                                                        <span class="label label-success pull-right">00:00:00</span></a>
-                                                    <span class="product-description">
-                                                        Descrição 
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <!-- /.item -->
-                                            <li class="item">
-                                                <div class="product-img">
-                                                    <img src="../dist/img/default-50x50.gif" alt="Product Image">
-                                                </div>
-                                                <div class="product-info">
-                                                    <a href="javascript:void(0)" class="product-title">Problema Hidráulico
-                                                        <span class="label label-warning pull-right">00:00:00</span>
-                                                        <span class="label label-success pull-right">00:00:00</span></a>
-                                                    <span class="product-description">
-                                                        Descrição
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <!-- /.item -->
+                                            <?php
+                                                include_once('../inicio/conecta.php');
+                                                include_once('../pages/php/Funcionario/minhas-soli-query.php');
+                                            ?>
                                         </ul>
 
 
