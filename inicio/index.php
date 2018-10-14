@@ -3,19 +3,19 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>AdminLTE 2 | Log in</title>
+        <title>Log in</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.7 -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
         <!-- Ionicons -->
-        <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+        <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
         <!-- Theme style -->
-        <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+        <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
         <!-- iCheck -->
-        <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
+        <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,39 +30,35 @@
     <body class="hold-transition login-page">
         <div class="login-box">
             <div class="login-logo">
-                <a href="index.html"><b>Funcionário</b> Hotelaria</a>
+                <a href="index2.html">Hotelaria</a>
             </div>
             <!-- /.login-logo -->
             <div class="login-box-body">
-                <p class="login-box-msg">Preencha com seus credenciais</p>
-
-                <form action="logaUserHospede.php" method="post">
-                    <div class="form-group has-feedback">
-                        <input name="login" type="text" class="form-control" placeholder="Usuário">
-                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <input name="senha" type="password" class="form-control" placeholder="Senha">
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
+                <form action="redirecionaTela.php" method="post">
                     <div class="row">
-                        <div class="col-xs-8">
-                            <div class="checkbox icheck">
-                                <label>
-                                    <input type="checkbox"> Lembrar de mim
-                                </label>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label>Selecione o tipo de login</label>
+                                <select name="tipo" class="form-control">
+                                    <option value="1">Hospede</option>
+                                    <option value="1">Funcionário</option>
+                                </select>
                             </div>
                         </div>
-                        <!-- /.col -->
-                        <div class="col-xs-4">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-2 col-md-2">
+                        </div>
+                        <div class="col-xs-6 col-sm-8 col-md-8">
                             <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                        </div>
+                        <div class="col-xs-3 col-sm-2 col-md-2">
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
                 <!-- /.social-auth-links -->
-
-                <a href="#">Esqueci minha senha</a><br>
 
             </div>
             <!-- /.login-box-body -->
@@ -70,11 +66,11 @@
         <!-- /.login-box -->
 
         <!-- jQuery 3 -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
         <!-- Bootstrap 3.3.7 -->
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- iCheck -->
-        <script src="plugins/iCheck/icheck.min.js"></script>
+        <script src="../plugins/iCheck/icheck.min.js"></script>
         <script>
             $(function () {
                 $('input').iCheck({

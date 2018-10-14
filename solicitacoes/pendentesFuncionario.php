@@ -10,17 +10,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <title>Solicitações</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
         <!-- Ionicons -->
-        <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+        <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
         <!-- Theme style -->
-        <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+        <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
         <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
               page. However, you can choose any other skin. Make sure you
               apply the skin class to the body tag so the changes take effect. -->
-        <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+        <link rel="stylesheet" href="../dist/css/skins/skin-blue.min.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,8 +58,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- MENU -->
             <?php
-            @include_once("pages/menu.php");
-            include 'conecta.php';
+            @include_once("../inicio/menu.php");
+            include '../inicio/conecta.php';
             ?>
 
             <!-- Content Wrapper. Contains page content -->
@@ -86,92 +86,92 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body"><script>
-                                function exibeDataHora(){
+                                function exibeDataHora() {
 
-   /*
-   *
-   * Funcao para exibicao de data e hora
-   * Angelito M. Goulart
-   * <angelito@bsd.com.br>
-   * 06/04/2011
-   *
-   * Uso: basta chama-la ao carregar a pagina
-   * e passar a div onde sera exibida a data 
-   * e hora como parametro.
-   *
-   */
+                                    /*
+                                     *
+                                     * Funcao para exibicao de data e hora
+                                     * Angelito M. Goulart
+                                     * <angelito@bsd.com.br>
+                                     * 06/04/2011
+                                     *
+                                     * Uso: basta chama-la ao carregar a pagina
+                                     * e passar a div onde sera exibida a data 
+                                     * e hora como parametro.
+                                     *
+                                     */
 
-   //cria um objeto do tipo date
-   var data = new Date();
-   
-   // obtem o dia, mes e ano
-   dia = data.getDate();
-   mes = data.getMonth() + 1;
-   ano = data.getFullYear();
-   
-   //obtem as horas, minutos e segundos
-   horas = data.getHours();
-   minutos = data.getMinutes();
-   segundos = data.getSeconds();
-   
-   //converte as horas, minutos e segundos para string
-   str_horas = new String(horas);
-   str_minutos = new String(minutos);
-   str_segundos = new String(segundos);
-   
-   //se tiver menos que 2 digitos, acrescenta o 0
-   if (str_horas.length < 2)
-      str_horas = 0 + str_horas;
-   if (str_minutos.length < 2)
-      str_minutos = 0 + str_minutos;
-   if (str_segundos.length < 2)
-      str_segundos = 0 + str_segundos;
-   
-   //converte o dia e o mes para string
-   str_dia = new String(dia);
-   str_mes = new String(mes);
-   
-   //se tiver menos que 2 digitos, acrescenta o 0
-   if (str_dia.length < 2) 
-      str_dia = 0 + str_dia;
-   if (str_mes.length < 2) 
-      str_mes = 0 + str_mes;
-   
-   //cria a string que sera exibida na div
-   data = ano + '-' + str_mes + '-' + str_dia ;
-   
-   //exibe a string na div
-   document.getElementById('dataReal').value = data;
-   
-   //executa a funcao com intervalo de 1 segundo
-  
-   
-}
-                
-</script>
-                                 <?php
-                                                $busca = "select * from solicitacao where situacao=0 or situacao = 1 ;";
-                                               
-                                                $resultado = mysqli_query($conexao, $busca);
-                                                $produto = mysqli_fetch_assoc($resultado);
-                                                while ($produto) {
-                                                    if($produto['funcionario']!=null){
-                                                        $busca2 = "select * from funcionario where codigo=".$produto['funcionario']." ;";
-                                                $resultado2 = mysqli_query($conexao, $busca2);
-                                                $produto2 = mysqli_fetch_assoc($resultado2);
-                                                $solicitante=$produto2['login'];
-                                                    }else{
-                                                         $busca2 = "select * from checkin where codigo=".$produto['hospede']." ;";
-                                                        
-                                                $resultado2 = mysqli_query($conexao, $busca2);
-                                                $produto2 = mysqli_fetch_assoc($resultado2);
-                                                $solicitante=$produto2['codigoGerado'];
-                                                    }
-                                                    
-                                                    
-                                                    if($produto['situacao']==0 ){
-                                                        echo '<form method="POST" action="manutencaoSolicitacao.php">
-                                                        <input type="hidden" id="solicitacao" name="solicitacao" value='.$produto['codigo'].'>
+                                    //cria um objeto do tipo date
+                                    var data = new Date();
+
+                                    // obtem o dia, mes e ano
+                                    dia = data.getDate();
+                                    mes = data.getMonth() + 1;
+                                    ano = data.getFullYear();
+
+                                    //obtem as horas, minutos e segundos
+                                    horas = data.getHours();
+                                    minutos = data.getMinutes();
+                                    segundos = data.getSeconds();
+
+                                    //converte as horas, minutos e segundos para string
+                                    str_horas = new String(horas);
+                                    str_minutos = new String(minutos);
+                                    str_segundos = new String(segundos);
+
+                                    //se tiver menos que 2 digitos, acrescenta o 0
+                                    if (str_horas.length < 2)
+                                        str_horas = 0 + str_horas;
+                                    if (str_minutos.length < 2)
+                                        str_minutos = 0 + str_minutos;
+                                    if (str_segundos.length < 2)
+                                        str_segundos = 0 + str_segundos;
+
+                                    //converte o dia e o mes para string
+                                    str_dia = new String(dia);
+                                    str_mes = new String(mes);
+
+                                    //se tiver menos que 2 digitos, acrescenta o 0
+                                    if (str_dia.length < 2)
+                                        str_dia = 0 + str_dia;
+                                    if (str_mes.length < 2)
+                                        str_mes = 0 + str_mes;
+
+                                    //cria a string que sera exibida na div
+                                    data = ano + '-' + str_mes + '-' + str_dia;
+
+                                    //exibe a string na div
+                                    document.getElementById('dataReal').value = data;
+
+                                    //executa a funcao com intervalo de 1 segundo
+
+
+                                }
+
+                                </script>
+                                <?php
+                                $busca = "select * from solicitacao where situacao=0 or situacao = 1 ;";
+
+                                $resultado = mysqli_query($conexao, $busca);
+                                $produto = mysqli_fetch_assoc($resultado);
+                                while ($produto) {
+                                    if ($produto['funcionario'] != null) {
+                                        $busca2 = "select * from funcionario where codigo=" . $produto['funcionario'] . " ;";
+                                        $resultado2 = mysqli_query($conexao, $busca2);
+                                        $produto2 = mysqli_fetch_assoc($resultado2);
+                                        $solicitante = $produto2['login'];
+                                    } else {
+                                        $busca2 = "select * from checkin where codigo=" . $produto['hospede'] . " ;";
+
+                                        $resultado2 = mysqli_query($conexao, $busca2);
+                                        $produto2 = mysqli_fetch_assoc($resultado2);
+                                        $solicitante = $produto2['codigoGerado'];
+                                    }
+
+
+                                    if ($produto['situacao'] == 0) {
+                                        echo '<form method="POST" action="../manutencao/manutencaoSolicitacao.php">
+                                                        <input type="hidden" id="solicitacao" name="solicitacao" value=' . $produto['codigo'] . '>
                                                            
                                                             <input type="hidden" id="dataReal" name="dataReal" >
                                     <div id="caixa" class="alert alert-danger alert-dismissible">
@@ -181,11 +181,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="container-fluid">
                                             <div class="row" style="display: flex">
                                                 <div class="col-xs-7 col-sm-8 col-md-8 col-lg-8">
-                                                    <p style="font-size: 20px">'.$produto['localidade'].'</p>
+                                                    <p style="font-size: 20px">' . $produto['localidade'] . '</p>
                                                 </div>
                                                 <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4" style="text-align: center">
                                                     <div class="col-md-auto">
-                                                        <h3 class="tempoInicio"style="margin-top: 0"> Recebido: '.$produto['horariosol'].'</h3>
+                                                        <h3 class="tempoInicio"style="margin-top: 0"> Recebido: ' . $produto['horariosol'] . '</h3>
                                                     </div>
                                                     <div class="col-md-auto">
                                                         <h3 class="tempoAtual"></h3>
@@ -196,22 +196,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <br>
                                             <div class="row" style="text-align: center">
                                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                    <p style="font-size: 30px">Codigo: '.$solicitante.'</p>
+                                                    <p style="font-size: 30px">Codigo: ' . $solicitante . '</p>
                                                 </div>
                                                 
                                                 <div class="col-xs-6 ccol-sm-6 col-md-3 col-lg-3">
                                                 <form method="post" action="indexPatara.php">
                                                    
-                                                    <input type="hidden" id="solicitacao" name="solicitacao" value='.$produto['codigo'].'>
+                                                    <input type="hidden" id="solicitacao" name="solicitacao" value=' . $produto['codigo'] . '>
                                                     </form>
                                                 </div>';
-                                                echo'
+                                        echo'
                                                 <div class="col-xs-6 ccol-sm-6 col-md-3 col-lg-3">
                                                    <button type="submit" id="btnCaminho" class="btn btn-warning">A caminho!</button>
                                                 </div>';
-                                                    }else{
-                                                        echo '<form method="POST" action="manutencaoSolicitacao.php">
-                                                        <input type="hidden" id="solicitacao" name="solicitacao" value='.$produto['codigo'].'>
+                                    } else {
+                                        echo '<form method="POST" action="../manutencao/manutencaoSolicitacao.php">
+                                                        <input type="hidden" id="solicitacao" name="solicitacao" value=' . $produto['codigo'] . '>
                                                            
                                                             <input type="hidden" id="dataReal" name="dataReal" >
                                     <div id="caixa" class="alert alert-warning alert-dismissible">
@@ -221,11 +221,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="container-fluid">
                                             <div class="row" style="display: flex">
                                                 <div class="col-xs-7 col-sm-8 col-md-8 col-lg-8">
-                                                    <p style="font-size: 20px">'.$produto['localidade'].'</p>
+                                                    <p style="font-size: 20px">' . $produto['localidade'] . '</p>
                                                 </div>
                                                 <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4" style="text-align: center">
                                                     <div class="col-md-auto">
-                                                        <h3 id="tempoInicio"style="margin-top: 0"> Recebido: '.$produto['horariosol'].'</h3>
+                                                        <h3 id="tempoInicio"style="margin-top: 0"> Recebido: ' . $produto['horariosol'] . '</h3>
                                                     </div>
                                                     <div class="col-md-auto">
                                                         <h3 id="tempoAtual"></h3>
@@ -236,22 +236,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <br>
                                             <div class="row" style="text-align: center">
                                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                    <p style="font-size: 30px">Codigo: '.$solicitante.'</p>
+                                                    <p style="font-size: 30px">Codigo: ' . $solicitante . '</p>
                                                 </div>
                                                 
                                                 <div class="col-xs-6 ccol-sm-6 col-md-3 col-lg-3">
                                                 <form method="post" action="indexPatara.php">
                                                    
-                                                    <input type="hidden" id="solicitacao" name="solicitacao" value='.$produto['codigo'].'>
+                                                    <input type="hidden" id="solicitacao" name="solicitacao" value=' . $produto['codigo'] . '>
                                                     </form>
                                                 </div>';
-                                                        echo'
+                                        echo'
                                                 <div class="col-xs-6 ccol-sm-6 col-md-3 col-lg-3">
                                                     <button type="submit" id="btnConclusao" class="btn btn-success disabled">Concluido!</button>
                                                 </div>';
-                                                        
-                                                    }
-                                                echo '
+                                    }
+                                    echo '
                                             </div>
                                             <br>
 
@@ -261,10 +260,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </div>
                                     
                                 </form>';
-                                                    $produto = mysqli_fetch_assoc($resultado);
-                                                }
-                                                ?>
-                                
+                                    $produto = mysqli_fetch_assoc($resultado);
+                                }
+                                ?>
+
                             </div>
                             <!-- /.box-body -->
                         </div>
@@ -291,13 +290,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- REQUIRED JS SCRIPTS -->
 
         <!-- jQuery 3 -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
         <!-- Bootstrap 3.3.7 -->
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- AdminLTE App -->
-        <script src="dist/js/adminlte.min.js"></script>
+        <script src="../dist/js/adminlte.min.js"></script>
         <!-- JS pra essa pagina -->
-        <script src="funcionario.js" type="text/javascript"></script>
+        <script src="../js/funcionario.js" type="text/javascript"></script>
 
         <!-- Optionally, you can add Slimscroll and FastClick plugins.
              Both of these plugins are recommended to enhance the

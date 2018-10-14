@@ -8,4 +8,4 @@ $resultado = mysqli_query($conexao, $busca);
 $produto = mysqli_fetch_assoc($resultado);
 $_SESSION['funcionario']= $login;
 $_SESSION['nome']= $produto['nome'];
-  @header("Location: http://localhost/MP_Hackathon/indexPatara.php");
+  @header("Location: http://localhost/MP_Hackathon/pendentesFuncionario.php");

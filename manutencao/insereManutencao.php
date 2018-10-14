@@ -2,7 +2,7 @@
 
 session_start();
 
-include 'conecta.php';
+include '../inicio/conecta.php';
 
 
 

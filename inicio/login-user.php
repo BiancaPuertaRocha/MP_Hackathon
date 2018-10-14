@@ -1,6 +1,6 @@
 <?php
   @session_start();
-  @include_once("/php/connectDB.php");
+  @include_once("../pages/php/connectDB.php");
 ?>
 <!DOCTYPE html>
 <html>

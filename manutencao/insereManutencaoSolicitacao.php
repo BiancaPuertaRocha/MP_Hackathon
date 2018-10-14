@@ -2,7 +2,7 @@
 
 session_start();
 
-include 'conecta.php';
+include '../inicio/conecta.php';
 
 
 
@@ -40,9 +40,9 @@ echo $inclusao;
 
 if (mysqli_error($conexao)) {
     echo "<h2>Erro na conexão, não cadastrado</h2>";
-    header("location: indexPatara.php");
+      header("location: manutencaoSolicitacao.php");
 } else {
-    header("location: indexPatara.php");
+    header("location: manutencaoSolicitacao.php");
 }
 mysqli_close($conexao);
 ?>

@@ -10,18 +10,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <title>Hotelaria</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
         <!-- Font Awesome -->
         <script src="javasdabia.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
         <!-- Ionicons -->
-        <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+        <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
         <!-- Theme style -->
-        <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+        <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
         <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
               page. However, you can choose any other skin. Make sure you
               apply the skin class to the body tag so the changes take effect. -->
-        <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+        <link rel="stylesheet" href="../dist/css/skins/skin-blue.min.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,8 +59,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- MENU -->
             <?php
-            @include_once("pages/menu.php");
-            include 'conecta.php';
+            @include_once("../inicio/menu.php");
+            include '../inicio/conecta.php';
             ?>
 
             <!-- Content Wrapper. Contains page content -->
@@ -85,61 +85,68 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nome: </label>
-                                    <input type="email" class="form-control"value="<?php $_POST['nome'] ?>" disabled="disabled"id="exampleInputEmail1" placeholder="Nome">
+                                    <input type="email" class="form-control"  id="exampleInputEmail1" placeholder="Nome">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">CPF: </label>
-                                    <input type="cpf" class="form-control" id="cpf" value="<?php $_POST['cpf'] ?>" disabled="disabled"placeholder="CPF">
+                                    <input type="cpf" class="form-control"  id="cpf" placeholder="CPF">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Data da Entrada</label>
-                                    <input type="date" class="form-control" value="<?php $_POST['dataEntrada'] ?>" disabled="disabled" >
+                                    <input type="date" class="form-control" >
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Data da Saida</label>
-                                    <input type="date" class="form-control" value="<?php $_POST['dataSaida'] ?>" disabled="disabled" >
+                                    <input type="date" class="form-control"  >
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Nuemero de Pessoas no Quarto</label>
 
-
-                                    <select class="form-control" disabled="disabled">
-                                        <option value="<?php $_POST['npessoas'] ?>"><?php $_POST['npessoas'] ?></option>
+                                    
+                                    <select disabled="disabled" class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
                                     </select>
 
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Bloco</label>
 
-
-                                    <select class="form-control" disabled="disabled">
-                                        <option value="<?php $_POST['bloco'] ?>"><?php $_POST['bloco'] ?></option>
-
+                                    
+                                    <select disabled="disabled" class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
                                     </select>
 
                                 </div>
                                 <div class="form-group">
-                                    <label>Quartos Disponíveis</label>
-                                    <select multiple class="form-control">
-                                        <?php
-                                        $busca = "select * from quartos where statusq=0 and bloco=" . $_POST['bloco'] . " and qtdPessoas= " . $_POST['npessoas'] . " ;";
-                                        $resultado = mysqli_query($conexao, $busca);
-                                        $produto = mysqli_fetch_assoc($resultado);
-                                        while ($produto) {
-                                            echo '<option value=' . $produto['codigo'] . '>' . $produto['numero'] . '</option>';
-                                            $produto = mysqli_fetch_assoc($resultado);
-                                        }
-                                        ?>
-
-
-
-                                    </select>
-                                </div>
-
+                  <label>Quartos Disponíveis</label>
+                    <select multiple class="form-control">
+                  <?php
+                                $busca = "select * from quartos where statusq=0 and  ;";
+                                $resultado = mysqli_query($conexao, $busca);
+                                $produto = mysqli_fetch_assoc($resultado);
+                                while ($produto) {
+                                    echo '<option value=' . $produto['codigo'] . '>' . $produto['numero'] . '</option>';
+                                    $produto = mysqli_fetch_assoc($resultado);
+                                }
+                                ?>
+                
+                    
+                   
+                  </select>
+                </div>
+                                
                                 <label for="exampleInputPassword1">Valor Final</label>
                                 <div class="input-group">
                                     <span class="input-group-addon">$</span>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" disabled="disabled">
                                     <span class="input-group-addon">.00</span>
                                 </div>
                                 <div class="form-group">

@@ -1,5 +1,5 @@
 <?php
-    include_once("pages/php/connectDB.php");
+    include_once("../connectDB.php");
     $codigoCliente = $_SESSION['codigo']; // ID Auto Increment
     $sql = "SELECT * from solicitacao where hospede = $codigoCliente;";
     $conn->set_charset("utf8");
@@ -22,7 +22,7 @@
             
             echo '<li class="item">
             <div class="product-img">
-            <img src="dist/img/'.$imgName.'" alt="Product Image">
+            <img src="../dist/img/'.$imgName.'" alt="Product Image">
             </div>
             <div class="product-info">
             <a href="javascript:void(0)" class="product-title">';

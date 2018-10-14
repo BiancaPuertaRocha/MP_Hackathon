@@ -4,9 +4,9 @@
 <!-- Logo -->
 <a href="index.html" class="logo">
   <!-- mini logo for sidebar mini 50x50 pixels -->
-  
+  <span class="logo-mini"><b>N</b>AA</span>
   <!-- logo for regular state and mobile devices -->
-  <span class="logo-lg"><b>AutoG</b>Hotelaria</span>]
+  <span class="logo-lg"><b>Name</b>AA</span>]
 </a>
 
 <!-- Header Navbar -->
@@ -22,7 +22,7 @@
           
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="http://localhost/MP_Hackathon/pages/logout.php"><i class="fas fa-sign-out-alt"></i></a>
+            <a href="http://localhost/MP_Hackathon/inicio/logout.php"><i class="fas fa-sign-out-alt"></i></a>
           </li>
         </ul>
       </div>
@@ -40,10 +40,10 @@
   <!-- Sidebar user panel (optional) -->
   <div class="user-panel">
     <div class="pull-left image">
-      <img src="dist/img/user-160x160.png" class="img-circle" alt="User Image">
+      <img src="../dist/img/user-160x160.png" class="img-circle" alt="User Image">
     </div>
     <div class="pull-left info">
-      <p><?php echo $_SESSION['funcionario']; ?></p>
+      <p><?php echo $_SESSION['codigoGerado']; ?></p>
       <!-- Status -->
       <a href="#"><i class="fas fa-user-md text-success"></i> <?php echo $_SESSION['nome']; ?></a>
     </div>
@@ -64,12 +64,9 @@
   <!-- Sidebar Menu -->
   <ul class="sidebar-menu" data-widget="tree">
     <!-- Optionally, you can add icons to the links -->
-    <li class="active"><a href="indexPatara.php"><i class="fa fa-link"></i> <span>Solicitações</span></a></li>
+    <li class="active"><a href="../solicitacoes/solicitacaoCliente.php"><i class="fa fa-link"></i> <span>Solicitações</span></a></li>
+  
    
-    <li><a href="manutencaoPatara.php"><i class="fa fa-link"></i> <span>Manutenções Agendadas</span></a></li>
-    <li><a href="sol_func.php"><i class="fa fa-link"></i> <span>Minhas Solicitações</span></a></li>
-    
-     
   </ul>
   <!-- /.sidebar-menu -->
 </section>
