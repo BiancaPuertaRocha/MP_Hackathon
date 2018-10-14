@@ -12,5 +12,5 @@
         ($codigoCliente, '$hour', $tipo, '$localidade', '$descricao', 0);
         ";
         $conn->query($sql);
-        @header("location: http://localhost/MP_Hackathon/solicitacoes-cliente.php");
+        @header("location: http://localhost/MP_Hackathon/solicitacoes/solicitacaoCliente.php");
 ?>

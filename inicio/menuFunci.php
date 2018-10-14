@@ -22,7 +22,7 @@
           
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="http://localhost/MP_Hackathon/inicio/logout.php"><i class="fas fa-sign-out-alt"></i></a>
+            <a href="http://localhost/MP_Hackathon/inicio/logout.php"><i class="fas fa-sign-out-alt"></i>Sair</a>
           </li>
         </ul>
       </div>

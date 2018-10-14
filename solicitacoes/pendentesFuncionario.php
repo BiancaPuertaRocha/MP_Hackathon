@@ -170,7 +170,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                                     if ($produto['situacao'] == 0) {
-                                        echo '<form method="POST" action="../manutencao/manutencaoSolicitacao.php">
+                                        echo '<form method="POST" action="../manutencao/insereManutencaoSolicitacao.php">
                                                         <input type="hidden" id="solicitacao" name="solicitacao" value=' . $produto['codigo'] . '>
                                                            
                                                             <input type="hidden" id="dataReal" name="dataReal" >

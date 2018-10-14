@@ -40,9 +40,9 @@ echo $inclusao;
 
 if (mysqli_error($conexao)) {
     echo "<h2>Erro na conexão, não cadastrado</h2>";
-      header("location: manutencaoSolicitacao.php");
+      header("location: pendentesFuncionario.php");
 } else {
-    header("location: manutencaoSolicitacao.php");
+    header("location: ../solicitacoes/pendentesFuncionario.php");
 }
 mysqli_close($conexao);
 ?>

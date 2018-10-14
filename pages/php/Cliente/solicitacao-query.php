@@ -1,9 +1,9 @@
 <?php
-    include_once("../connectDB.php");
+    
     $codigoCliente = $_SESSION['codigo']; // ID Auto Increment
     $sql = "SELECT * from solicitacao where hospede = $codigoCliente;";
-    $conn->set_charset("utf8");
-    $result = $conn->query($sql);
+    $conexao->set_charset("utf8");
+    $result = $conexao->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $nomeTipo = "";

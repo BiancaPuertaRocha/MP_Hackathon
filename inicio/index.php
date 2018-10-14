@@ -41,7 +41,7 @@
                                 <label>Selecione o tipo de login</label>
                                 <select name="tipo" class="form-control">
                                     <option value="1">Hospede</option>
-                                    <option value="1">Funcionário</option>
+                                    <option value="2">Funcionário</option>
                                 </select>
                             </div>
                         </div>

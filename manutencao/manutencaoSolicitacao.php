@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-     <head>
+      <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Hotelaria</title>
@@ -40,13 +40,13 @@
         <!-- Google Font -->
         <link rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    </head
+    </head>
     <body class="hold-transition skin-blue sidebar-mini"onload="exibeDataHora()">
         <div class="wrapper">
             <?php
             @include_once("../inicio/menu.php");
             include '../inicio/conecta.php';
-            session_start();
+            
             ?>
             <script  type="text/javascript" >
 
@@ -138,9 +138,11 @@
                         <div class="box-body">
                             <form method="POST" action="insereManutencaoSolicitacao.php">
                                 <?php
+                                
                                 $soli = $_POST['solicitacao'];
                                 $busca = "select * from solicitacao where  codigo=$soli ;";
-
+                                
+                                
                                 $resultado = mysqli_query($conexao, $busca);
                                 $produto = mysqli_fetch_assoc($resultado);
 

@@ -146,6 +146,7 @@ desired effect
 
                   <!-- Lista as Solicitações -->
                   <?php
+                    include '../inicio/conecta.php';
                     include_once("../pages/php/Cliente/solicitacao-query.php");
                     
                   ?>
