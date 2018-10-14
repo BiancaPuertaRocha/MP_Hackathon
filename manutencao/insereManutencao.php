@@ -5,8 +5,6 @@ session_start();
 include '../inicio/conecta.php';
 
 
-
-
 $peca = $_POST['peca'];
 $descricao = $_POST['descricao'];
 $localidade = $_POST['localidade'];

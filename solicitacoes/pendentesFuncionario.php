@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -58,8 +59,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- MENU -->
             <?php
-            @include_once("../inicio/menu.php");
             include '../inicio/conecta.php';
+            @include_once("../inicio/menu.php");
             ?>
 
             <!-- Content Wrapper. Contains page content -->
@@ -150,7 +151,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 </script>
                                 <?php
-                                $busca = "select * from solicitacao where situacao=0 or situacao = 1 ;";
+                                $busca = "select * from solicitacao where situacao = 0 or situacao = 1 ;";
 
                                 $resultado = mysqli_query($conexao, $busca);
                                 $produto = mysqli_fetch_assoc($resultado);

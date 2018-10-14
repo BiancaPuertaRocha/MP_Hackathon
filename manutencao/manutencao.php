@@ -46,7 +46,7 @@
             <?php
             @include_once("../inicio/menu.php");
             include '../inicio/conecta.php';
-            session_start();
+          
             ?>
             <script  type="text/javascript" >
 

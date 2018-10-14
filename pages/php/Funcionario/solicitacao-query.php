@@ -1,6 +1,6 @@
 <?php
-    $codigoCliente = $_SESSION['codigo']; // ID Auto Increment
-    $sql = "SELECT * from solicitacao where hospede = $codigoCliente;";
+$codigoFunc = $_SESSION['codigo']; // ID Auto Increment
+    $sql = "SELECT * from solicitacao where funcionario = $codigoFunc && situacao = 0 or situacao = 1 ";
     $conexao->set_charset("utf8");
     $result = $conexao->query($sql);
     if ($result->num_rows > 0) {

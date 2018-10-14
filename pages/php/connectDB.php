@@ -1,8 +1,8 @@
 <?php
 $host   = "localhost";
 $user   = "root";
-$pass   = "";
-$db     = "u";
+$pass   = "ifsp";
+$db     = "bancoU";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
  

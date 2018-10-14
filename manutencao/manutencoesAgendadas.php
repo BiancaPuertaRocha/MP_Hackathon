@@ -98,10 +98,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="box-tools">
                                             <div class="input-group input-group-sm" style="width: 200px;">
                                                 
-                                                <input type="date" name="table_search" class="form-control pull-right" placeholder="Search">
+                                                <input type="date" name="date1" value='0'  class="form-control pull-right" placeholder="Search">
                                                 <div class="input-group-btn">
                                                 </div>
-                                                <input type="date" name="table_search" class="form-control pull-right" placeholder="Search">
+                                                <input type="date" name="date2" value='0' class="form-control pull-right" placeholder="Search">
                                                  <div class="input-group-btn">
                                                     <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                                                 </div>
@@ -123,20 +123,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <th>Checkar</th>
                                                 </tr>
                                                  <?php
-                                                $busca = "select * from manutencao ;";
+                                                 if(isset($_POST['date1'])&&isset($_POST['date2'])){
+                                                $busca = "select * from manutencao where validade between '".$_POST["date1"]."' and '".$_POST["date2"]."';";
                                                 $resultado = mysqli_query($conexao, $busca);
                                                 $produto = mysqli_fetch_assoc($resultado);
                                                 while ($produto) {
                                                     $busca2 = "select * from pecas where codigo = ".$produto['peca']." ;";
                                                 $resultado2 = mysqli_query($conexao, $busca2);
-                                                echo $busca2;
+                                                
                                                 $produto2 = mysqli_fetch_assoc($resultado2);
                                                     echo '<tr>
                                                     <td>'.$produto2['codigo'].'</td>
                                                     <td>'.$produto2['descricao'].'</td>
                                                    
                                                     <td>'.$produto['localidade'].'</td>
-                                                    <td>'.$produto2['dataReal'].'</td>
+                                                    <td>'.$produto['dataReal'].'</td>
                                                     <td>'.$produto['validade'].'</td>
                                                    
                                                     <td id="lbl0"><span class="label label-success">Em funcionamento</span></td>
@@ -148,30 +149,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     echo '<option value=' . $produto['codigo'] . '>' . $produto['codigo'] . ' - ' . $produto['descricao'] . '</option>';
                                                     $produto = mysqli_fetch_assoc($resultado);
                                                 }
+                                                 }
                                                 ?>
                                                 
-                                                <tr>
-                                                    <td>00000</td>
-                                                    <td>Bomba d'água</td>
-                                                    <td>Piscina 2</td>
-                                                    <td id="date1">13-10-2018</td>
-                                                    <td id="lbl1"><span class="label label-warning">Requer manuntenção</span></td>
-                                                    <td>A bomba foi trocada.</td>
-                                                    <td>
-                                                        <button id="btn1" type="button" class="btn btn-success">OK!</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>00001</td>
-                                                    <td>Máquina de café</td>
-                                                    <td>Escritório tal</td>
-                                                    <td id="date2">06-06-2018</td>
-                                                    <td id="lbl2"><span class="label label-danger">Atrasado!</span></td>
-                                                    <td>Jarra trocada.</td>
-                                                    <td>
-                                                        <button id="btn2" type="button" class="btn btn-success">OK!</button>
-                                                    </td>
-                                                </tr>
+                                                
                                             </tbody>
                                         </table>
                                     </div>
@@ -188,88 +169,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             <!-- /.content-wrapper -->
 
-            <!-- Main Footer -->
-            <footer class="main-footer">
-                <!-- To the right -->
-                <div class="pull-right hidden-xs">
-                    Anything you want
-                </div>
-                <!-- Default to the left -->
-                <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
-            </footer>
+            
 
             <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-dark">
-                <!-- Create the tabs -->
-                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-                    <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-                    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-                </ul>
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <!-- Home tab content -->
-                    <div class="tab-pane active" id="control-sidebar-home-tab">
-                        <h3 class="control-sidebar-heading">Recent Activity</h3>
-                        <ul class="control-sidebar-menu">
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                                    <div class="menu-info">
-                                        <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                                        <p>Will be 23 on April 24th</p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /.control-sidebar-menu -->
-
-                        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-                        <ul class="control-sidebar-menu">
-                            <li>
-                                <a href="javascript:;">
-                                    <h4 class="control-sidebar-subheading">
-                                        Custom Template Design
-                                        <span class="pull-right-container">
-                                            <span class="label label-danger pull-right">70%</span>
-                                        </span>
-                                    </h4>
-
-                                    <div class="progress progress-xxs">
-                                        <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /.control-sidebar-menu -->
-
-                    </div>
-                    <!-- /.tab-pane -->
-                    <!-- Stats tab content -->
-                    <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-                    <!-- /.tab-pane -->
-                    <!-- Settings tab content -->
-                    <div class="tab-pane" id="control-sidebar-settings-tab">
-                        <form method="post">
-                            <h3 class="control-sidebar-heading">General Settings</h3>
-
-                            <div class="form-group">
-                                <label class="control-sidebar-subheading">
-                                    Report panel usage
-                                    <input type="checkbox" class="pull-right" checked>
-                                </label>
-
-                                <p>
-                                    Some information about this general settings option
-                                </p>
-                            </div>
-                            <!-- /.form-group -->
-                        </form>
-                    </div>
-                    <!-- /.tab-pane -->
-                </div>
-            </aside>
+            
             <!-- /.control-sidebar -->
             <!-- Add the sidebar's background. This div must be placed
             immediately after the control sidebar -->
